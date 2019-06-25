@@ -1,0 +1,38 @@
+
+extends layout
+
+block content
+
+	.homebackground
+		.container
+			.navbar-header
+				img.logo-image.logo(src="../fonts/login-logo.png")
+				.navbar-brand
+			ul.nav.navbar-nav.navbar-center
+				li
+					.navbar-btn#btn-logout.btn.btn-primary
+						| Sign Out
+		.clearfix
+	#modal-alert.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+		.modal-dialog
+			.modal-content
+				.modal-header
+					h4
+					button(type='button',data-dismiss="modal").close  ×
+				.modal-body
+					p
+				.modal-footer.account_footer
+					button(type='button',data-dismiss="modal")#ok.btn.btn-success OK
+	.clearfix
+
+	include account
+	include modals/alert
+	include modals/confirm
+
+block scripts
+	script(src='/vendor/jquery-2.2.3.min.js')
+	script(src='/vendor/jquery.form.min.js')
+	script(src='/vendor/bootstrap.min.js')
+	script(src='/js/views/profile.js')
+	script(src='/js/controllers/profileController.js')
+	script(src='/js/form-validators/profileValidator.js')

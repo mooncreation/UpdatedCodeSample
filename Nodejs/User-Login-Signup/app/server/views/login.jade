@@ -1,0 +1,120 @@
+
+extends layout
+
+block content
+		.home
+			img.logo-image(src="../fonts/login-logo.png")
+			.main_buttons
+				button(type='button').btn.btn-success.button-login-in
+					span.glyphicon.glyphicon-lock
+					| Log in
+				button(type='submit').btn.btn-success.button-register
+					span.glyphicon.glyphicon-lock
+					| Register Now
+				.clearfix
+		//Register Popup code
+		#create_account.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+			.modal-dialog
+				.modal-content
+					.modal-header
+						button(type='button',data-dismiss="modal").close  ×
+						h4 Signup
+					.modal-body
+						// preset form values if we receive a userdata object //
+						- user = typeof(udata) != 'undefined' ? udata : { }
+						// store the userId on the client side in a hidden input field //
+						input(type='hidden', value= user._id)#userId
+						form(method="post")#account-form.form-horizontal.well
+							h2
+							h5#sub1
+							hr
+							.form-group
+								label.control-label.col-sm-3 Name
+								.col-sm-9
+									input.form-control#name(type='text', name='name', value= user.name,required)
+							.form-group
+								label.control-label.col-sm-3 Email
+								.col-sm-9
+									input.form-control#email(type='text', name='email', value= user.email,required)
+							.form-group
+								label.control-label.col-sm-3 Phone
+								.col-sm-9
+									input.form-control#phone(type='text', name='phone', value= user.phone,required)
+							hr
+							h5#sub2
+							.form-group
+								label.control-label.col-sm-3 Username
+								.col-sm-9
+									input.form-control#username(type='text', name='username', value= user.username,required).disabled
+							.form-group
+								label.control-label.col-sm-3 Password
+								.col-sm-9
+									input.form-control#password(type='password', name='password', value='',required)
+							.modal-footer.account_footer
+									.form-buttons
+										button(type='button')#account-form-btn1.btn.btn-default
+										button(type='submit')#account-form-btn2.btn.btn-success
+		//Login Popup code
+		#login_form.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+			.modal-dialog
+				.modal-content
+					.modal-header
+						button(type='button',data-dismiss="modal").close  ×
+						h4 Have an Account?
+					.modal-body
+						form.well(id='form-login', method='post')
+							h4 Please Login To Your Account
+							hr
+							.error_msg
+							.form-group.user
+								label Username
+								.error
+								input.form-control(type='text', id='username', name='username',required)
+								
+							.form-group.pass
+								label Password
+								input.form-control(type='password', id='password', name='password',required)
+								.error
+							.modal-footer.account_footer
+								.controls
+									button(type='submit').btn.btn-success.button-sign-in
+										span.glyphicon.glyphicon-lock
+										| Sign In
+								.btm-links
+								br
+							.clearfix
+		//Success Modal popup							
+		#modal-alert.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+			.modal-dialog
+				.modal-content
+					.modal-header
+						h4
+						button(type='button',data-dismiss="modal").close  ×
+					.modal-body
+						p
+					.modal-footer.account_footer
+						button(type='button',data-dismiss="modal")#ok.btn.btn-success OK
+									.clearfix
+		//Error Modal popup										
+		#modal-form-errors.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+			.modal-dialog
+				.modal-content
+					.modal-header
+						h4
+						button(type='button',data-dismiss="modal").close  ×
+					.modal-body
+						p
+					.modal-footer.account_footer
+						button(type='button',data-dismiss="modal")#ok.btn.btn-success OK
+									.clearfix
+	include modals/alert
+block scripts
+	script(src='/vendor/jquery-2.2.3.min.js')
+	script(src='/vendor/jquery.form.min.js')
+	script(src='/vendor/bootstrap.min.js')
+	script(src='/js/views/login.js')
+	script(src='/js/views/register.js')
+	script(src='/js/controllers/registerController.js')
+	script(src='/js/form-validators/profileValidator.js')
+	script(src='/js/form-validators/loginValidator.js')
+	script(src='/js/form-validators/emailValidator.js')

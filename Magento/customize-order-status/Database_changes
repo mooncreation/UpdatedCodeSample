@@ -1,0 +1,3 @@
+Database: Your database name
+Table: mgwl_sales_order
+Filed: expected_delivery_date, actual_delivery_date.

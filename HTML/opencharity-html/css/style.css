@@ -1,0 +1,532 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700");
+@import url(//db.onlinewebfonts.com/c/1b4cd06b44538d529084b3599f708643?family=MuseoSansW01-Rounded300);
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@font-face {
+    font-family: 'museosans500';
+    src: url("../fonts/museosans500.eot");
+    src: url("../fonts/museosans500.eot") format("embedded-opentype"), url("../fonts/museosans500.woff2") format("woff2"), url("../fonts/museosans500.woff") format("woff"), url("../fonts/museosans500.ttf") format("truetype"), url("../fonts/museosans500.svg#museosans500") format("svg");
+}
+/* ==============================================
+  Base CSS
+ ============================================== */
+
+*,:after,:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {
+    display: block;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+a {
+    color: #5fc0c3;
+    text-decoration: none;
+    transition: all 0.75s ease;
+}
+a:hover {
+    color: #57c0d5;
+}
+p {
+    margin: 0 0 .5em;
+}
+ul,ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+h1,h2,h3,h4,h5{
+    color: #575656;
+    font-family: 'museosans500';
+}
+header:after,header:before,footer:after,footer:before,.clearfix:after,.clearfix:before,.container:after,.container:before,
+.row:after,.row:before {
+    display: table;
+    content: " ";
+}
+.container {
+    width: 100%;
+    max-width: 80em;  
+    margin: 0 auto;
+}
+.text-green {
+    color: #5fc0c3;
+}
+.text-center {
+    text-align: center;
+}
+.clearfix {
+    display: inline-block;
+}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+/* start commented backslash hack \*/
+
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+/* close commented backslash hack */
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+/* ==============================================
+  Header CSS
+ ============================================== */
+header {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    min-height: 75px;
+}
+.logo {
+    float: left;
+}
+.navigation {
+    float: right;
+    margin-top: 18px;
+}
+.navigation ul {
+    float: left;
+}
+.navigation ul li {
+    float: left;
+    text-transform: uppercase;
+    margin: 0 15px;
+    line-height: 40px;
+    font-family: "museosans500";
+    list-style: none;
+    padding-top:0; 
+}
+.navigation ul li a {
+    color: #575656;
+}
+.navigation ul li a:hover {
+    color: #5fc0c3;
+}
+.navigation .btn {
+    float: right;
+    margin-left: 15px;
+}
+.block-menu h2{
+  display: none;
+}
+/* ==============================================
+  Button CSS
+ ============================================== */
+
+.btn,button,input[type="submit"],input[type="reset"] {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 2px;
+    background: #5fc0c3;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    position: relative;
+    font-family: "museosans500";
+    letter-spacing: 0.1em;
+    display: inline-block;
+    border:none;
+    cursor: pointer;
+}
+.btn:after ,
+button:after,input[type="submit"]:after,input[type="reset"]:after{
+    background: rgba(0, 0, 0, 0.015) none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    left: 50%;
+    position: absolute;
+    right: 50%;
+    top: 0;
+    transition: all 0.3s ease 0s;
+    width: 0;
+}
+.btn:focus:after,
+.btn:hover:after,
+button:focus:after,input[type="submit"]:focus:after,input[type="reset"]:focus:after {
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.btn:hover,.join-us:hover {
+    color: #fff;
+}
+button:hover,input[type="submit"]:hover,input[type="reset"]:hover{
+    background: #57c0d5;
+    color: #fff;
+}
+.btn--border {
+    background: transparent;
+    border: 1px solid #5fc0c3;
+    color: #5fc0c3;
+}
+.btn--border:hover{
+    background: #5fc0c3;
+    color: #fff;
+}
+.navigation ul li a.join-us {
+    background: transparent;
+    border: 1px solid #5fc0c3;
+    color: #5fc0c3;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+    padding: 10px 20px;
+    transition: all 0.5s ease;
+}
+.navigation ul li a.join-us:hover{
+    background: #5fc0c3;
+    color: #fff;
+}
+
+/* ==============================================
+  Banner Section CSS
+ ============================================== */
+
+.main-banner {
+    background: url(../images/hero-banner.jpg) no-repeat top center/cover;
+    padding: 4em 0;
+    color: #fff;
+    text-align: center;
+    clear: both;
+}
+.main-banner h1 {
+    font: 400 55px/76px "MuseoSansW01-Rounded300";
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0;
+    color: #fff;
+}
+.main-banner h5 {
+    font-size: 1.2em;
+    font-weight: normal;
+    line-height: 2em;
+    letter-spacing: 0.03em;
+    color: #fff;
+}
+.main-banner p {
+    line-height: 2em;
+}
+.main-banner .banner-text {
+    width: 55%;
+    margin: 0 auto;
+}
+
+/* ==============================================
+  Event Section CSS
+ ============================================== */
+
+.upcoming-event {
+    background: #f1f2f5;
+    padding: 32px 0;
+    clear: both;
+}
+.upcoming-event .text-left {
+    float: left;
+}
+.upcoming-event .text-left p {
+    color: #5b6172;
+    margin: 0;
+    line-height: 30px;
+}
+.upcoming-event .text-left span {
+    font-family: "museosans500";
+    font-size: 1.2em;
+}
+.upcoming-event .text-left strong {
+    color: #575656;
+    font-weight: 500;
+    font-size: 1.2em;
+    font-family: "museosans500";
+}
+.upcoming-event .btn {
+    float: right;
+    margin-top: 12px;
+}
+.padded40 {
+    padding: 40px 0;
+}
+
+/* ==============================================
+  Get Involved Section CSS
+ ============================================== */
+.block-content.even {
+    background: #f1f2f5;
+}
+.block-content h2 {
+    color: #575656;
+    font: 500 26px "museosans500";
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 1.5em;
+}
+.block-content .title {
+    font-size: 17px;
+    text-transform: uppercase;
+    color: #575656;
+    font-weight: 500;
+}
+.block-content p {
+    color: #5b6172;
+    line-height: 1.8em;
+    margin: 0 auto 2em;
+}
+.block-content .col-4 p {
+    width: 80%;
+}
+.block-content h4 {
+    color: #5b6172;
+    font: 500 17px "museosans500";
+    margin-bottom: 30px;
+}
+/* ==============================================
+  Our Mission Section CSS
+ ============================================== */
+
+.our-mission {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 45px;
+    margin-bottom: 45px;
+}
+.our-mission .white-box {
+    background: #fff;
+    border-radius: 3px;
+    margin-top: 60px;
+    padding: 0 18px 5px;
+    margin-bottom: 20px;
+}
+.our-mission .white-box .box-icon {
+    background: #57c0d5;
+    border-radius: 100%;
+    border: 10px solid #fff;
+    text-align: center;
+    width: 100px;
+    display: inline-block;
+    height: 100px;
+    margin-top: -47px;
+}
+.our-mission .white-box h4 {
+    font: 17px "museosans500";
+    color: #57c0d5;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+/* ==============================================
+  Blog Section CSS
+ ============================================== */
+
+.blog h5 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #5fc0c3;
+    margin: 0 0 10px;
+    border-bottom: 1px solid #f2f2f2;
+    overflow: hidden;
+    padding-bottom: 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: 'open sans';
+}
+.blog p {
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 20px;
+    margin-bottom: 12px;
+}
+.blog .date {
+    color: #5b6172;
+}
+
+/* ==============================================
+  Form CSS
+ ============================================== */
+form label{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    min-width: 100px;
+    color: #5b6172;
+}
+
+form .form-text{
+    display: inline-block;
+    border:1px solid #ccc;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    background: #fff;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    min-width: 200px;
+}
+form .form-text:focus{    
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+
+}
+
+/* ==============================================
+  Inner Page CSS
+ ============================================== */
+#main-wrapper {
+    padding-bottom: 30px;
+}
+#user-login-form .item-list ul li{
+    margin-left: 0;
+}
+ul.primary.tabs li {
+    line-height: 33px;
+}
+ul.primary.tabs li a {
+    color: #333;
+    padding: 0.5em 1em;
+}
+
+/* ==============================================
+  Footer CSS
+ ============================================== */
+
+footer {
+    background: #454850;
+    color: #979eb1;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+footer .social-links {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #585b61;
+    box-shadow: 0 -1px 0 #4a4e57 inset;
+    margin-bottom: 12px;
+}
+footer .social-links li {
+    display: inline-block;
+    font-size: 20px;
+    margin: 0 10px 10px;
+}
+footer a:hover {
+    color: #fff;
+}
+
+/* ==============================================
+  Media Query
+ ============================================== */
+
+
+@media (min-width: 768px) {
+    .col-4 {
+        width: 33.33333333%;
+    }
+    .col-3, .col-4 {
+        float: left;
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+@media (max-width: 1199px) {
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .col-4 { 
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .block-content .col-4 p {
+        width: 98%;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-toggle {
+        display: inline-block;
+    } 
+    .get-involved .col-4{
+      margin-bottom: 40px;
+    }   
+}
+@media (max-width: 639px) {
+    .logo {
+      float: none;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .navigation {
+      margin: 0 0 15px;
+      float: none; 
+    } 
+    .navigation ul {
+      float: none;
+      text-align: center;
+      display: inline-block;   
+    }
+    .navigation ul li {
+      margin:0;       
+      display: inline-block;
+      float: none;
+    }
+    .navigation ul li + li{
+      margin-left: 12px;
+    }
+    .main-banner h1 {
+      font-size: 32px;
+      line-height: 45px;
+    }
+    .main-banner .banner-text {
+      width: 90%;
+    }    
+    .upcoming-event{
+        text-align: center;
+    }
+    .upcoming-event .text-left {
+        display: inline-block;
+        float: none;
+    }
+    .upcoming-event .btn{
+        display: inline-block;
+        float: none;
+    }
+    .owl-carousel {
+        padding: 0 10px;
+    }
+     
+}
+@media (max-width: 479px) { 
+  .navigation ul li + li{
+    margin-left: 2px;
+  }
+  .navigation ul li {      
+    font-size: 12px;
+  }
+  .navigation a.btn {
+    display: inline-block;
+    float: none;
+    margin-left: 1px;
+    padding: 10px 6px
+   }
+}

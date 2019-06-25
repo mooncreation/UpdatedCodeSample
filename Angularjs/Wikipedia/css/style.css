@@ -1,0 +1,41 @@
+form ul li img {
+	float: left;
+}
+.list-group-item span {
+	display: inline-block;
+	vertical-align: middle;
+}
+.list-group-item .image {
+	width: 50px;
+	overflow: hidden;
+	margin-right:20px; 
+}
+.wiki-image {	
+	width: 100%;
+}
+.search-icon {
+	width: 5%;
+	margin-left:20px;
+	cursor: pointer;
+}
+a:hover {
+	text-decoration: none;
+}
+div.tooltip-inner {
+    text-align: left;
+    background-color: #eeeeee;
+    max-width: 500px;
+    width: 450px;
+    color: #000;
+    padding: 20px;
+    font-size: 13px;
+}
+.tooltip.in {
+	opacity:1!important;
+}
+.tooltip-arrow {
+ 	border-left-color: #eeeeee !important;
+}
+.modal-header a i.glyphicon-remove {
+	cursor: pointer;
+} 

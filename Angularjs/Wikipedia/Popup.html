@@ -1,0 +1,28 @@
+<!-- WIKIPEDIA SEARCH POPUP TEMPLATE -->
+<div class="modal-header">
+	<a type="button" title="Close" data-dismiss="modal"><i ng-click="close()"  class="glyphicon glyphicon-remove icon-arrow-right pull-right"></i></a>
+	<h1 style="text-align:center">Wikipedia Search</h1>
+</div>
+<div class="modal-body">
+	<div ng-app="wikiApp" >
+	    <div ng-controller="wikiController">
+	        <form> 
+	            <autocomplete ng-keyup="getResults()" ng-model="content"></autocomplete>
+	        </form>
+
+                <div data-toggle="tooltip" html="true"  uib-tooltip="{{ result.extract | limitTo: 2000 }}" tooltip-placement="left" class="list-group-item" ng-repeat="result in results | orderObjectBy: 'result.index'">
+                	<span class="image">
+                    	<img class="wiki-image" ng-src="{{result.thumbnail.source ? result.thumbnail.source : defaultLogo }}"/>
+                    </span>
+                    <div ng-class="custom-tooltip" ng-hide="true">{{result.extract}}</div>
+                    <span>
+	                    <h5>
+	                    	<a href="{{result.link}}" target="_blank" >{{result.title}}</a>
+	                    </h5>
+                    </span>
+                </div>
+	    </div>
+	</div>
+</div>
+<div class="modal-footer"> 
+</div>
